@@ -56,3 +56,83 @@ header {
 .linkssite a:hover {
     opacity: 0.6;
 }
+
+.user-menu {
+    position: relative;
+}
+
+.user-button {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: white;
+    color: black;
+
+    font-weight: 700;
+}
+
+.user-dropdown {
+    position: absolute;
+
+    top: calc(100% + 12px);
+    right: 0;
+
+    min-width: 170px;
+
+    padding: 7px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+
+    background: #080808;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.user-dropdown a,
+.user-dropdown button {
+    padding: 10px 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: white;
+
+    text-align: left;
+    text-decoration: none;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.user-dropdown a:hover,
+.user-dropdown button:hover {
+    background: rgba(255, 255, 255, 0.08);
+}

@@ -35,9 +35,9 @@
     background: linear-gradient(
         to bottom,
         transparent 0%,
-        rgba(0, 0, 0, 0.15) 30%,
-        rgba(0, 0, 0, 0.55) 70%,
-        #000 100%
+        #7a98ad8a 30%,
+        #7a98ad 70%,
+        #7a98ad 100%
     );
     pointer-events: none;
     z-index: 1;

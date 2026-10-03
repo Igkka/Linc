@@ -1,19 +1,10 @@
 
-import "@/components/Header.css"
+import "@/components/Header.css";
+import { getCurrentUser } from "../../lib/auth";
+import HeaderClient from "./HeaderClient";
 
-export default function Header(){
-    return(
-        <header>
-            <div className="logo">
-                <img className="logoheader" src="./logo.png" alt="" />
-                <a href="/">Linc</a>
-            </div>
-            <div className="linkssite">
-                <a href="#support">Support</a>
-                <a href="#prices">Prices</a>
-                <a href="/reg">Registration</a>
-                <a href="/login">Log In</a>
-            </div>
-        </header>
-    )
+export default async function Header() {
+    const user = await getCurrentUser();
+
+    return <HeaderClient user={user} />;
 }
