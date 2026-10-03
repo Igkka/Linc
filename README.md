@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Linc
 
-First, run the development server:
+> **Your profile. Your style. Your choice.**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+A modern platform for creating personalized profile pages with custom backgrounds, music, social links and Discord integration.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+# Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🎨 Fully customizable profile pages
+- 👤 Unique usernames and personal profiles
+- 🎵 Custom music player
+- 🔗 Social media links
+- 💬 Discord integration
+- 🖼️ Custom avatars and backgrounds
+- 🔤 Custom fonts and text styling
+- 📱 Responsive design
+- 🔐 Secure authentication
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+# Plans
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Free
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Personal profile with essential customization and social features.
 
-## Deploy on Vercel
+### Pro
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Advanced customization, unlimited music, Discord Rich Presence, analytics and additional profile features.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+# Tech Stack
+
+**Frontend**
+
+`Next.js` · `React` · `JavaScript` · `CSS`
+
+**Backend**
+
+`Next.js API` · `Prisma` · `PostgreSQL`
+
+**Infrastructure**
+
+`Neon` · `Vercel`
+
+---
+
+# Links
+
+**Website:** [Linc](https://your-linc-domain.vercel.app)
+
+**Repository:** [GitHub](https://github.com/your-username/linc)
+
+---
+
+# Support
+
+Found a bug or have an idea?
+
+Open an **Issue** or start a **Discussion** on GitHub.
+
+---
+
+<p align="center">
+
+**Linc — Your profile. Your style. Your choice.**
+
+</p>
