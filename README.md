@@ -50,9 +50,9 @@ Advanced customization, unlimited music, Discord Rich Presence, analytics and ad
 
 # Links
 
-**Website:** [Linc](https://your-linc-domain.vercel.app)
+**Website:** [Linc](https://linc-links.vercel.app/)
 
-**Repository:** [GitHub](https://github.com/your-username/linc)
+**Repository:** [GitHub](https://github.com/Igkka/Linc)
 
 ---
 
@@ -124,9 +124,9 @@ Open an **Issue** or start a **Discussion** on GitHub.
 
 # Ссылки
 
-**Сайт:** [Linc](https://your-linc-domain.vercel.app)
+**Сайт:** [Linc](https://linc-links.vercel.app/)
 
-**Репозиторий:** [GitHub](https://github.com/your-username/linc)
+**Репозиторий:** [GitHub](https://github.com/Igkka/Linc)
 
 ---
 
