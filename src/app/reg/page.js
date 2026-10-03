@@ -38,7 +38,7 @@ export default function RegisterPage() {
                 return;
             }
 
-            window.location.href = "/login";
+            window.location.href = "/";
 
         } catch {
             setError("Unable to connect to the server");
