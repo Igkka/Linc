@@ -1,35 +1,22 @@
 .dashboard {
     min-height: 100vh;
-
     display: flex;
-
     background: #050505;
     color: white;
-
     font-family: "Manrope", sans-serif;
 }
 
-
-/* SIDEBAR */
-
 .dashboard-sidebar {
     position: fixed;
-
     left: 0;
     top: 0;
     bottom: 0;
-
     width: 250px;
-
     padding: 25px 18px;
-
     box-sizing: border-box;
-
     display: flex;
     flex-direction: column;
-
     border-right: 1px solid rgba(255, 255, 255, 0.08);
-
     background: #080808;
 }
 
@@ -37,9 +24,7 @@
 .dashboard-logo {
     display: flex;
     align-items: center;
-
     gap: 10px;
-
     padding: 5px 10px 30px;
 }
 
@@ -47,7 +32,6 @@
 .dashboard-logo img {
     width: 32px;
     height: 32px;
-
     object-fit: contain;
 }
 
@@ -61,11 +45,8 @@
 .dashboard-user {
     display: flex;
     align-items: center;
-
     gap: 11px;
-
     padding: 15px;
-
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 13px;
 }
@@ -74,16 +55,12 @@
 .dashboard-avatar {
     width: 38px;
     height: 38px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
-
     background: white;
     color: black;
-
     font-weight: 700;
 }
 
@@ -91,16 +68,13 @@
 .dashboard-user div:last-child {
     display: flex;
     flex-direction: column;
-
     gap: 2px;
-
     min-width: 0;
 }
 
 
 .dashboard-user strong {
     font-size: 14px;
-
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -108,41 +82,29 @@
 
 .dashboard-user span {
     color: rgba(255, 255, 255, 0.4);
-
     font-size: 12px;
 }
 
 
-/* NAVIGATION */
-
 .dashboard-nav {
     display: flex;
     flex-direction: column;
-
     gap: 4px;
-
     margin-top: 30px;
 }
 
 
 .dashboard-nav button {
     width: 100%;
-
     padding: 11px 13px;
-
     border: none;
     border-radius: 9px;
-
     background: transparent;
     color: rgba(255, 255, 255, 0.5);
-
     font-family: inherit;
     font-size: 14px;
-
     text-align: left;
-
     cursor: pointer;
-
     transition:
         background 0.2s ease,
         color 0.2s ease;
@@ -151,26 +113,20 @@
 
 .dashboard-nav button:hover {
     color: white;
-
     background: rgba(255, 255, 255, 0.05);
 }
 
 
 .dashboard-nav button.active {
     background: rgba(255, 255, 255, 0.09);
-
     color: white;
 }
 
 
-/* SIDEBAR BOTTOM */
-
 .dashboard-bottom {
     margin-top: auto;
-
     display: flex;
     flex-direction: column;
-
     gap: 5px;
 }
 
@@ -178,23 +134,15 @@
 .dashboard-bottom a,
 .dashboard-bottom button {
     padding: 11px 13px;
-
     border: none;
-
     background: transparent;
-
     color: rgba(255, 255, 255, 0.45);
-
     font-family: inherit;
     font-size: 14px;
-
     text-align: left;
     text-decoration: none;
-
     cursor: pointer;
-
     border-radius: 9px;
-
     transition:
         color 0.2s ease,
         background 0.2s ease;
@@ -204,55 +152,39 @@
 .dashboard-bottom a:hover,
 .dashboard-bottom button:hover {
     color: white;
-
     background: rgba(255, 255, 255, 0.05);
 }
 
-
-/* CONTENT */
-
 .dashboard-content {
     width: calc(100% - 250px);
-
     min-height: 100vh;
-
     margin-left: 250px;
-
     box-sizing: border-box;
-
     padding: 70px 8%;
 }
 
 
 .dashboard-section {
     max-width: 1000px;
-
     margin: 0 auto;
 }
 
 
 .section-heading {
     display: flex;
-
     align-items: flex-end;
     justify-content: space-between;
-
     gap: 30px;
-
     margin-bottom: 45px;
 }
 
 
 .eyebrow {
     display: block;
-
     margin-bottom: 10px;
-
     color: rgba(255, 255, 255, 0.4);
-
     font-size: 12px;
     font-weight: 600;
-
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
@@ -261,9 +193,7 @@
 .section-heading h1,
 .empty-section h1 {
     margin: 0;
-
     font-size: 38px;
-
     letter-spacing: -1px;
 }
 
@@ -271,25 +201,18 @@
 .section-heading p,
 .empty-section p {
     margin: 12px 0 0;
-
     color: rgba(255, 255, 255, 0.45);
-
     font-size: 15px;
 }
 
 
 .view-profile {
     padding: 11px 17px;
-
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 10px;
-
     color: white;
-
     text-decoration: none;
-
     font-size: 14px;
-
     transition:
         background 0.2s ease,
         border-color 0.2s ease;
@@ -302,54 +225,39 @@
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-
-/* OVERVIEW */
-
 .overview-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 15px;
 }
 
 
 .dashboard-card {
     padding: 25px;
-
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 15px;
-
     background: rgba(255, 255, 255, 0.025);
 }
 
 
 .dashboard-card span {
     display: block;
-
     margin-bottom: 10px;
-
     color: rgba(255, 255, 255, 0.4);
-
     font-size: 13px;
 }
 
 
 .dashboard-card strong {
     font-size: 18px;
-
     word-break: break-word;
 }
 
 
-/* EDITOR */
-
 .editor {
     padding: 30px;
-
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 17px;
-
     background: rgba(255, 255, 255, 0.025);
 }
 
@@ -357,16 +265,13 @@
 .form-group {
     display: flex;
     flex-direction: column;
-
     gap: 9px;
-
     margin-bottom: 22px;
 }
 
 
 .form-group label {
     color: rgba(255, 255, 255, 0.65);
-
     font-size: 13px;
 }
 
@@ -375,23 +280,15 @@
 .form-group textarea,
 .form-group select {
     width: 100%;
-
     box-sizing: border-box;
-
     padding: 12px 14px;
-
     outline: none;
-
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-
     background: rgba(255, 255, 255, 0.04);
-
     color: white;
-
     font-family: inherit;
     font-size: 14px;
-
     transition:
         border-color 0.2s ease,
         background 0.2s ease;
@@ -402,14 +299,12 @@
 .form-group textarea:focus,
 .form-group select:focus {
     border-color: rgba(255, 255, 255, 0.35);
-
     background: rgba(255, 255, 255, 0.06);
 }
 
 
 .form-group textarea {
     min-height: 120px;
-
     resize: vertical;
 }
 
@@ -422,109 +317,81 @@
 
 .form-row {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 20px;
 }
 
 
 .editor-footer {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
     gap: 20px;
-
     padding-top: 10px;
 }
 
 
 .editor-footer span {
     color: rgba(255, 255, 255, 0.45);
-
     font-size: 13px;
 }
 
 
 .editor-footer button {
     padding: 12px 20px;
-
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
-
     background: white;
     color: black;
-
     font-family: inherit;
     font-size: 14px;
     font-weight: 600;
-
     cursor: pointer;
-
     transition:
         background 0.2s ease,
         color 0.2s ease;
 }
-
 
 .editor-footer button:hover {
     background: transparent;
     color: white;
 }
 
-
 .editor-footer button:disabled {
     opacity: 0.5;
-
     cursor: not-allowed;
 }
 
 
-/* EMPTY SECTIONS */
-
 .empty-section {
     max-width: 700px;
-
     margin: 0 auto;
-
     padding-top: 40px;
 }
 
 
 .coming-soon {
     display: inline-block;
-
     margin-top: 30px;
     padding: 7px 12px;
-
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-
     color: rgba(255, 255, 255, 0.45);
-
     font-size: 12px;
 }
 
-
-/* LOADING */
 
 .loading {
     color: rgba(255, 255, 255, 0.45);
 }
 
 
-/* MOBILE */
-
 @media (max-width: 800px) {
 
     .dashboard-sidebar {
         position: static;
-
         width: 100%;
         height: auto;
-
         border-right: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
@@ -535,15 +402,12 @@
 
     .dashboard-nav {
         flex-direction: row;
-
         overflow-x: auto;
-
         margin-top: 20px;
     }
 
     .dashboard-nav button {
         width: auto;
-
         white-space: nowrap;
     }
 
@@ -553,9 +417,7 @@
 
     .dashboard-content {
         width: 100%;
-
         margin-left: 0;
-
         padding: 45px 6%;
     }
 
@@ -565,11 +427,183 @@
 
     .section-heading {
         align-items: flex-start;
-
         flex-direction: column;
     }
 
     .form-row {
         grid-template-columns: 1fr;
     }
+}
+
+.upload-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px dashed rgba(255, 255, 255, 0.18);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.upload-box:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.upload-box input[type="file"] {
+    display: none;
+}
+
+.avatar-upload {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+
+.background-upload {
+    min-height: 180px;
+}
+
+.upload-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.upload-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 4px;
+    color: rgba(255, 255, 255, 0.55);
+    text-align: center;
+}
+
+.upload-placeholder span {
+    font-size: 26px;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.upload-placeholder p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.upload-placeholder small {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.35);
+}
+.custom-color-picker {
+    position: relative;
+    width: 100%;
+}
+
+.color-trigger {
+    width: 100%;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.color-trigger:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.color-preview {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    border-radius: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.color-arrow {
+    margin-left: auto;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+}
+
+.color-panel {
+    position: absolute;
+    top: calc(-32.5vh);
+    left: 0;
+    width: 100%;
+    padding: 14px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    background: #111214;
+    z-index: 20;
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 9px;
+}
+
+.color-item {
+    width: 100%;
+    aspect-ratio: 1;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition:
+        transform 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.color-item:hover {
+    transform: scale(1.08);
+}
+
+.color-item.selected {
+    border-color: #fff;
+}
+
+.custom-color {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+}
+
+.custom-color input[type="color"] {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
 }
