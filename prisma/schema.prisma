@@ -34,6 +34,6 @@ model User {
     email        String   @unique
     passwordHash String
     createdAt    DateTime @default(now())
-
+    uid          Int      @unique @default(autoincrement())
     profile      Profile?
 }

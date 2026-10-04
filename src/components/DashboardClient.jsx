@@ -200,6 +200,8 @@ export default function DashboardClient({ user }) {
                     <div>
                         <strong>{user.username}</strong>
                         <span>Free</span>
+                        <span>UID</span>
+                        <strong>#{user.uid}</strong>
                     </div>
                 </div>
 

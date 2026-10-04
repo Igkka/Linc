@@ -8,9 +8,11 @@ export default async function UserPage({ params }) {
 
     const user = await prisma.user.findUnique({
         where: {
-            username: username
+            username
         },
-        include: {
+        select: {
+            uid: true,
+            username: true,
             profile: true
         }
     });
@@ -54,6 +56,8 @@ export default async function UserPage({ params }) {
                 <h1>
                     {user.username}
                 </h1>
+
+                <strong className="uid">UID #{user.uid}</strong>
 
 
                 {profile?.description && (

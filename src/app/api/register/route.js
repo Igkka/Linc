@@ -1,6 +1,11 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
+import { SignJWT } from "jose";
 import { prisma } from "../../../../lib/prisma";
+
+const secret = new TextEncoder().encode(
+    process.env.AUTH_SECRET
+);
 
 export async function POST(request) {
     try {
@@ -35,9 +40,9 @@ export async function POST(request) {
             where: {
                 OR: [
                     { username },
-                    { email },
-                ],
-            },
+                    { email }
+                ]
+            }
         });
 
         if (existingUser) {
@@ -60,20 +65,44 @@ export async function POST(request) {
             data: {
                 username,
                 email,
-                passwordHash,
-            },
+                passwordHash
+            }
         });
 
-        return NextResponse.json(
+        // Создаём JWT сразу после регистрации
+        const token = await new SignJWT({
+            userId: user.id,
+            username: user.username
+        })
+            .setProtectedHeader({
+                alg: "HS256"
+            })
+            .setIssuedAt()
+            .setExpirationTime("7d")
+            .sign(secret);
+
+        // Создаём response
+        const response = NextResponse.json(
             {
                 message: "Account created",
                 user: {
                     id: user.id,
-                    username: user.username,
-                },
+                    username: user.username
+                }
             },
             { status: 201 }
         );
+
+        // Сохраняем авторизацию в cookie
+        response.cookies.set("linc_session", token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "lax",
+            maxAge: 60 * 60 * 24 * 7,
+            path: "/"
+        });
+
+        return response;
 
     } catch (error) {
         console.error("REGISTER_ERROR:", error);
