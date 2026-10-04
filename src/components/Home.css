@@ -68,21 +68,25 @@
 
 
 .homebtn {
-outline: none;
-width: 250px;
-height: 50px;
-border: 1px solid rgba(255, 255, 255, 0.7);
-border-radius: 12px;
-background: transparent;
-color: #fff;
-font-family: "Manrope", sans-serif;
-font-size: 16px;
-font-weight: 600;
-cursor: pointer;
-transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    width: 250px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    background: transparent;
+    color: #fff;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
 
 }
 
@@ -94,5 +98,5 @@ transition:
 }
 
 .homebtn {
-transform: scale(0.98);
+    transform: scale(0.98);
 }

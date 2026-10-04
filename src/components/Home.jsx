@@ -18,8 +18,8 @@ export default function HomePage(){
                 <h1>Linc - more than a profile.</h1>
                 <p className="homedesc">Create your own digital space, shape every detail, share what you love, and let people discover the person behind the profile</p>
                 <div className="homebtns">
-                    <button className="homebtn">Join Now</button>
-                    <button className="homebtn">View prices</button>
+                    <a href="/reg" className="homebtn">Join Now</a>
+                    <a href="#prices" className="homebtn">View prices</a>
                     
                 </div>
             </div>
