@@ -1,0 +1,74 @@
+.user-page {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    background-color: #050505;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.user-profile {
+    width: min(500px, 100%);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+
+.user-avatar {
+    width: 110px;
+    height: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    font-size: 36px;
+    font-weight: 700;
+}
+
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.user-profile h1 {
+    margin: 25px 0 10px;
+
+    font-size: 36px;
+}
+
+
+.user-profile p {
+    max-width: 500px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 16px;
+    line-height: 1.6;
+}
