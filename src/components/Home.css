@@ -55,7 +55,11 @@
 
 
 .homedesc {
-    max-width: 30vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    max-width: 600px;
 }
 
 
@@ -99,4 +103,18 @@
 
 .homebtn {
     transform: scale(0.98);
+}
+
+@media (max-width: 700px){
+    .homecontent{
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        color: white;
+        width: 300px;
+        height: 300px;  
+    }
 }

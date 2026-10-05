@@ -120,7 +120,13 @@
     color: white;
     border-color: rgba(255, 255, 255, 0.6);
 }
-
+.pricesdesc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    max-width: 600px;
+}
 
 
 @media (max-width: 700px) {
@@ -139,4 +145,17 @@
     .card > p {
         font-size: 28px;
     }
+    .pricescontent{
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        color: white;
+        height: 300px;
+        width: 300px;
+    }
+
+
 }

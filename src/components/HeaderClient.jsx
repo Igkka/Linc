@@ -16,7 +16,7 @@ export default function HeaderClient({ user }) {
 
     return (
         <header>
-            <div className="logo">
+            <a href="/" className="logo">
                 <img
                     className="logoheader"
                     src="/logo.png"
@@ -24,7 +24,7 @@ export default function HeaderClient({ user }) {
                 />
 
                 <h1>Linc</h1>
-            </div>
+            </a>
 
             <div className="linkssite">
                 <a href="#support">Support</a>
@@ -41,7 +41,7 @@ export default function HeaderClient({ user }) {
                                 {user.username.charAt(0).toUpperCase()}
                             </div>
 
-                            <span>{user.username}</span>
+                            <span className="usernameheader">{user.username}</span>
                         </button>
 
                         {menuOpen && (
