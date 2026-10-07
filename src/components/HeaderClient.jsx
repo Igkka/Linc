@@ -23,7 +23,7 @@ export default function HeaderClient({ user }) {
                     alt="Linc"
                 />
 
-                <h1>Linc</h1>
+                <h1>Linxy</h1>
             </a>
 
             <div className="linkssite">
@@ -65,7 +65,7 @@ export default function HeaderClient({ user }) {
                     </div>
                 ) : (
                     <>
-                        <Link href="/reg">
+                        <Link className="regbtnheader" href="/reg">
                             Registration
                         </Link>
 

@@ -15,7 +15,7 @@ export default function HomePage(){
                     <source src="/back.mp4" type="video/mp4" />
                 </video>
             <div className="homecontent">
-                <h1>Linc - more than a profile.</h1>
+                <h1>Linxy - more than a profile.</h1>
                 <p className="homedesc">Create your own digital space, shape every detail, share what you love, and let people discover the person behind the profile</p>
                 <div className="homebtns">
                     <a href="/reg" className="homebtn">Join Now</a>

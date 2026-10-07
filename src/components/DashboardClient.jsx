@@ -189,7 +189,7 @@ export default function DashboardClient({ user }) {
             <aside className="dashboard-sidebar">
                 <a href="/" className="dashboard-logo">
                     <img src="/logo.png" alt="Linc" />
-                    <span>Linc</span>
+                    <span>Linxy</span>
                 </a>
 
                 <div className="dashboard-user">

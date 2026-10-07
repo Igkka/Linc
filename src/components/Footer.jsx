@@ -9,7 +9,7 @@ export default function Footer() {
                 <div className="footer-brand">
                     <div className="footer-logo">
                         <img src="/logo.png" alt="Linc" />
-                        <span>Linc</span>
+                        <span>Linxy</span>
                     </div>
 
                     <p>
@@ -59,7 +59,7 @@ export default function Footer() {
             </div>
 
             <div className="footer-bottom">
-                <span>© 2026 Linc. All rights reserved.</span>
+                <span>© 2026 Linxy. All rights reserved.</span>
 
                 <div>
                     <a href="/privacy">Privacy</a>
