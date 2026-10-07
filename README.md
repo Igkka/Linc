@@ -50,7 +50,7 @@ Advanced customization, unlimited music, Discord Rich Presence, analytics and ad
 
 # Links
 
-**Website:** [Linc](https://www.linxy.fun/)
+**Website:** [Linxy](https://www.linxy.fun/)
 
 **Repository:** [GitHub](https://github.com/Igkka/Linxy)
 
