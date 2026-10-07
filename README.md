@@ -1,4 +1,4 @@
-# Linc
+# Linxy
 
 > **Your profile. Your style. Your choice.**
 
@@ -50,9 +50,9 @@ Advanced customization, unlimited music, Discord Rich Presence, analytics and ad
 
 # Links
 
-**Website:** [Linc](https://linc-links.vercel.app/)
+**Website:** [Linxy](https://www.linxy.fun/)
 
-**Repository:** [GitHub](https://github.com/Igkka/Linc)
+**Repository:** [GitHub](https://github.com/Igkka/Linxy)
 
 ---
 
@@ -66,7 +66,7 @@ Open an **Issue** or start a **Discussion** on GitHub.
 
 <p align="center">
 
-**Linc — Your profile. Your style. Your choice.**
+**Linxy — Your profile. Your style. Your choice.**
 
 </p>
 
@@ -124,9 +124,9 @@ Open an **Issue** or start a **Discussion** on GitHub.
 
 # Ссылки
 
-**Сайт:** [Linc](https://linc-links.vercel.app/)
+**Сайт:** [Linxy](https://www.linxy.fun/)
 
-**Репозиторий:** [GitHub](https://github.com/Igkka/Linc)
+**Репозиторий:** [GitHub](https://github.com/Igkka/Linxy)
 
 ---
 
@@ -140,6 +140,6 @@ Open an **Issue** or start a **Discussion** on GitHub.
 
 <p align="center">
 
-**Linc — Твой профиль. Твой стиль. Твой выбор.**
+**Linxy — Твой профиль. Твой стиль. Твой выбор.**
 
 </p>
