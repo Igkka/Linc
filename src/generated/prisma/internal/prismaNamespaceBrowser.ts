@@ -52,7 +52,8 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   Profile: 'Profile',
-  User: 'User'
+  User: 'User',
+  ProfileLink: 'ProfileLink'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -79,6 +80,8 @@ export const ProfileScalarFieldEnum = {
   background: 'background',
   font: 'font',
   textColor: 'textColor',
+  descriptionColor: 'descriptionColor',
+  iconColor: 'iconColor',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -96,6 +99,20 @@ export const UserScalarFieldEnum = {
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const ProfileLinkScalarFieldEnum = {
+  id: 'id',
+  profileId: 'profileId',
+  title: 'title',
+  url: 'url',
+  icon: 'icon',
+  position: 'position',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ProfileLinkScalarFieldEnum = (typeof ProfileLinkScalarFieldEnum)[keyof typeof ProfileLinkScalarFieldEnum]
 
 
 export const SortOrder = {

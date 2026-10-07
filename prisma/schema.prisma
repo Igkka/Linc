@@ -18,16 +18,19 @@ model Profile {
     userId      String   @unique
     user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-    description String?
-    avatar      String?
-    background  String?
-    font        String?
-    textColor   String?
+    description      String?
+    avatar           String?
+    background       String?
+    font             String?
+    textColor        String?
+    descriptionColor String?
+    iconColor        String?
 
     createdAt   DateTime @default(now())
     updatedAt   DateTime @updatedAt
-}
 
+    links ProfileLink[]
+}
 model User {
     id           String   @id @default(cuid())
     username     String   @unique
@@ -36,4 +39,19 @@ model User {
     createdAt    DateTime @default(now())
     uid          Int      @unique @default(autoincrement())
     profile      Profile?
+}
+
+model ProfileLink {
+    id        String   @id @default(cuid())
+
+    profileId String
+    profile   Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+    title     String
+    url       String
+    icon      String
+    position  Int      @default(0)
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }

@@ -22,7 +22,6 @@ export async function GET() {
         return NextResponse.json({
             profile
         });
-
     } catch (error) {
         console.error("PROFILE_GET_ERROR:", error);
 
@@ -32,7 +31,6 @@ export async function GET() {
         );
     }
 }
-
 
 export async function PUT(request) {
     try {
@@ -52,7 +50,9 @@ export async function PUT(request) {
             avatar,
             background,
             font,
-            textColor
+            textColor,
+            descriptionColor,
+            iconColor
         } = body;
 
         const profile = await prisma.profile.upsert({
@@ -65,7 +65,9 @@ export async function PUT(request) {
                 avatar,
                 background,
                 font,
-                textColor
+                textColor,
+                descriptionColor,
+                iconColor
             },
 
             create: {
@@ -74,19 +76,22 @@ export async function PUT(request) {
                 avatar,
                 background,
                 font,
-                textColor
+                textColor,
+                descriptionColor,
+                iconColor
             }
         });
 
         return NextResponse.json({
             profile
         });
-
     } catch (error) {
         console.error("PROFILE_UPDATE_ERROR:", error);
 
         return NextResponse.json(
-            { error: "Something went wrong" },
+            {
+                error: error.message || "Something went wrong"
+            },
             { status: 500 }
         );
     }

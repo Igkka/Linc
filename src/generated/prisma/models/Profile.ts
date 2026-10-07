@@ -32,6 +32,8 @@ export type ProfileMinAggregateOutputType = {
   background: string | null
   font: string | null
   textColor: string | null
+  descriptionColor: string | null
+  iconColor: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
@@ -44,6 +46,8 @@ export type ProfileMaxAggregateOutputType = {
   background: string | null
   font: string | null
   textColor: string | null
+  descriptionColor: string | null
+  iconColor: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
@@ -56,6 +60,8 @@ export type ProfileCountAggregateOutputType = {
   background: number
   font: number
   textColor: number
+  descriptionColor: number
+  iconColor: number
   createdAt: number
   updatedAt: number
   _all: number
@@ -70,6 +76,8 @@ export type ProfileMinAggregateInputType = {
   background?: true
   font?: true
   textColor?: true
+  descriptionColor?: true
+  iconColor?: true
   createdAt?: true
   updatedAt?: true
 }
@@ -82,6 +90,8 @@ export type ProfileMaxAggregateInputType = {
   background?: true
   font?: true
   textColor?: true
+  descriptionColor?: true
+  iconColor?: true
   createdAt?: true
   updatedAt?: true
 }
@@ -94,6 +104,8 @@ export type ProfileCountAggregateInputType = {
   background?: true
   font?: true
   textColor?: true
+  descriptionColor?: true
+  iconColor?: true
   createdAt?: true
   updatedAt?: true
   _all?: true
@@ -179,6 +191,8 @@ export type ProfileGroupByOutputType = {
   background: string | null
   font: string | null
   textColor: string | null
+  descriptionColor: string | null
+  iconColor: string | null
   createdAt: Date
   updatedAt: Date
   _count: ProfileCountAggregateOutputType | null
@@ -212,9 +226,12 @@ export type ProfileWhereInput = {
   background?: Prisma.StringNullableFilter<"Profile"> | string | null
   font?: Prisma.StringNullableFilter<"Profile"> | string | null
   textColor?: Prisma.StringNullableFilter<"Profile"> | string | null
+  descriptionColor?: Prisma.StringNullableFilter<"Profile"> | string | null
+  iconColor?: Prisma.StringNullableFilter<"Profile"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Profile"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Profile"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  links?: Prisma.ProfileLinkListRelationFilter
 }
 
 export type ProfileOrderByWithRelationInput = {
@@ -225,9 +242,12 @@ export type ProfileOrderByWithRelationInput = {
   background?: Prisma.SortOrderInput | Prisma.SortOrder
   font?: Prisma.SortOrderInput | Prisma.SortOrder
   textColor?: Prisma.SortOrderInput | Prisma.SortOrder
+  descriptionColor?: Prisma.SortOrderInput | Prisma.SortOrder
+  iconColor?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
+  links?: Prisma.ProfileLinkOrderByRelationAggregateInput
 }
 
 export type ProfileWhereUniqueInput = Prisma.AtLeast<{
@@ -241,9 +261,12 @@ export type ProfileWhereUniqueInput = Prisma.AtLeast<{
   background?: Prisma.StringNullableFilter<"Profile"> | string | null
   font?: Prisma.StringNullableFilter<"Profile"> | string | null
   textColor?: Prisma.StringNullableFilter<"Profile"> | string | null
+  descriptionColor?: Prisma.StringNullableFilter<"Profile"> | string | null
+  iconColor?: Prisma.StringNullableFilter<"Profile"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Profile"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Profile"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  links?: Prisma.ProfileLinkListRelationFilter
 }, "id" | "userId">
 
 export type ProfileOrderByWithAggregationInput = {
@@ -254,6 +277,8 @@ export type ProfileOrderByWithAggregationInput = {
   background?: Prisma.SortOrderInput | Prisma.SortOrder
   font?: Prisma.SortOrderInput | Prisma.SortOrder
   textColor?: Prisma.SortOrderInput | Prisma.SortOrder
+  descriptionColor?: Prisma.SortOrderInput | Prisma.SortOrder
+  iconColor?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.ProfileCountOrderByAggregateInput
@@ -272,6 +297,8 @@ export type ProfileScalarWhereWithAggregatesInput = {
   background?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
   font?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
   textColor?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
+  descriptionColor?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
+  iconColor?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Profile"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Profile"> | Date | string
 }
@@ -283,9 +310,12 @@ export type ProfileCreateInput = {
   background?: string | null
   font?: string | null
   textColor?: string | null
+  descriptionColor?: string | null
+  iconColor?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutProfileInput
+  links?: Prisma.ProfileLinkCreateNestedManyWithoutProfileInput
 }
 
 export type ProfileUncheckedCreateInput = {
@@ -296,8 +326,11 @@ export type ProfileUncheckedCreateInput = {
   background?: string | null
   font?: string | null
   textColor?: string | null
+  descriptionColor?: string | null
+  iconColor?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  links?: Prisma.ProfileLinkUncheckedCreateNestedManyWithoutProfileInput
 }
 
 export type ProfileUpdateInput = {
@@ -307,9 +340,12 @@ export type ProfileUpdateInput = {
   background?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   font?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   textColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  descriptionColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  iconColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutProfileNestedInput
+  links?: Prisma.ProfileLinkUpdateManyWithoutProfileNestedInput
 }
 
 export type ProfileUncheckedUpdateInput = {
@@ -320,8 +356,11 @@ export type ProfileUncheckedUpdateInput = {
   background?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   font?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   textColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  descriptionColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  iconColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  links?: Prisma.ProfileLinkUncheckedUpdateManyWithoutProfileNestedInput
 }
 
 export type ProfileCreateManyInput = {
@@ -332,6 +371,8 @@ export type ProfileCreateManyInput = {
   background?: string | null
   font?: string | null
   textColor?: string | null
+  descriptionColor?: string | null
+  iconColor?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -343,6 +384,8 @@ export type ProfileUpdateManyMutationInput = {
   background?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   font?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   textColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  descriptionColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  iconColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -355,6 +398,8 @@ export type ProfileUncheckedUpdateManyInput = {
   background?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   font?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   textColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  descriptionColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  iconColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -367,6 +412,8 @@ export type ProfileCountOrderByAggregateInput = {
   background?: Prisma.SortOrder
   font?: Prisma.SortOrder
   textColor?: Prisma.SortOrder
+  descriptionColor?: Prisma.SortOrder
+  iconColor?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -379,6 +426,8 @@ export type ProfileMaxOrderByAggregateInput = {
   background?: Prisma.SortOrder
   font?: Prisma.SortOrder
   textColor?: Prisma.SortOrder
+  descriptionColor?: Prisma.SortOrder
+  iconColor?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -391,6 +440,8 @@ export type ProfileMinOrderByAggregateInput = {
   background?: Prisma.SortOrder
   font?: Prisma.SortOrder
   textColor?: Prisma.SortOrder
+  descriptionColor?: Prisma.SortOrder
+  iconColor?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -398,6 +449,11 @@ export type ProfileMinOrderByAggregateInput = {
 export type ProfileNullableScalarRelationFilter = {
   is?: Prisma.ProfileWhereInput | null
   isNot?: Prisma.ProfileWhereInput | null
+}
+
+export type ProfileScalarRelationFilter = {
+  is?: Prisma.ProfileWhereInput
+  isNot?: Prisma.ProfileWhereInput
 }
 
 export type StringFieldUpdateOperationsInput = {
@@ -444,6 +500,20 @@ export type ProfileUncheckedUpdateOneWithoutUserNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.ProfileUpdateToOneWithWhereWithoutUserInput, Prisma.ProfileUpdateWithoutUserInput>, Prisma.ProfileUncheckedUpdateWithoutUserInput>
 }
 
+export type ProfileCreateNestedOneWithoutLinksInput = {
+  create?: Prisma.XOR<Prisma.ProfileCreateWithoutLinksInput, Prisma.ProfileUncheckedCreateWithoutLinksInput>
+  connectOrCreate?: Prisma.ProfileCreateOrConnectWithoutLinksInput
+  connect?: Prisma.ProfileWhereUniqueInput
+}
+
+export type ProfileUpdateOneRequiredWithoutLinksNestedInput = {
+  create?: Prisma.XOR<Prisma.ProfileCreateWithoutLinksInput, Prisma.ProfileUncheckedCreateWithoutLinksInput>
+  connectOrCreate?: Prisma.ProfileCreateOrConnectWithoutLinksInput
+  upsert?: Prisma.ProfileUpsertWithoutLinksInput
+  connect?: Prisma.ProfileWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ProfileUpdateToOneWithWhereWithoutLinksInput, Prisma.ProfileUpdateWithoutLinksInput>, Prisma.ProfileUncheckedUpdateWithoutLinksInput>
+}
+
 export type ProfileCreateWithoutUserInput = {
   id?: string
   description?: string | null
@@ -451,8 +521,11 @@ export type ProfileCreateWithoutUserInput = {
   background?: string | null
   font?: string | null
   textColor?: string | null
+  descriptionColor?: string | null
+  iconColor?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  links?: Prisma.ProfileLinkCreateNestedManyWithoutProfileInput
 }
 
 export type ProfileUncheckedCreateWithoutUserInput = {
@@ -462,8 +535,11 @@ export type ProfileUncheckedCreateWithoutUserInput = {
   background?: string | null
   font?: string | null
   textColor?: string | null
+  descriptionColor?: string | null
+  iconColor?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  links?: Prisma.ProfileLinkUncheckedCreateNestedManyWithoutProfileInput
 }
 
 export type ProfileCreateOrConnectWithoutUserInput = {
@@ -489,8 +565,11 @@ export type ProfileUpdateWithoutUserInput = {
   background?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   font?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   textColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  descriptionColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  iconColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  links?: Prisma.ProfileLinkUpdateManyWithoutProfileNestedInput
 }
 
 export type ProfileUncheckedUpdateWithoutUserInput = {
@@ -500,10 +579,114 @@ export type ProfileUncheckedUpdateWithoutUserInput = {
   background?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   font?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   textColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  descriptionColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  iconColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  links?: Prisma.ProfileLinkUncheckedUpdateManyWithoutProfileNestedInput
+}
+
+export type ProfileCreateWithoutLinksInput = {
+  id?: string
+  description?: string | null
+  avatar?: string | null
+  background?: string | null
+  font?: string | null
+  textColor?: string | null
+  descriptionColor?: string | null
+  iconColor?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  user: Prisma.UserCreateNestedOneWithoutProfileInput
+}
+
+export type ProfileUncheckedCreateWithoutLinksInput = {
+  id?: string
+  userId: string
+  description?: string | null
+  avatar?: string | null
+  background?: string | null
+  font?: string | null
+  textColor?: string | null
+  descriptionColor?: string | null
+  iconColor?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type ProfileCreateOrConnectWithoutLinksInput = {
+  where: Prisma.ProfileWhereUniqueInput
+  create: Prisma.XOR<Prisma.ProfileCreateWithoutLinksInput, Prisma.ProfileUncheckedCreateWithoutLinksInput>
+}
+
+export type ProfileUpsertWithoutLinksInput = {
+  update: Prisma.XOR<Prisma.ProfileUpdateWithoutLinksInput, Prisma.ProfileUncheckedUpdateWithoutLinksInput>
+  create: Prisma.XOR<Prisma.ProfileCreateWithoutLinksInput, Prisma.ProfileUncheckedCreateWithoutLinksInput>
+  where?: Prisma.ProfileWhereInput
+}
+
+export type ProfileUpdateToOneWithWhereWithoutLinksInput = {
+  where?: Prisma.ProfileWhereInput
+  data: Prisma.XOR<Prisma.ProfileUpdateWithoutLinksInput, Prisma.ProfileUncheckedUpdateWithoutLinksInput>
+}
+
+export type ProfileUpdateWithoutLinksInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  background?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  font?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  textColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  descriptionColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  iconColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  user?: Prisma.UserUpdateOneRequiredWithoutProfileNestedInput
+}
+
+export type ProfileUncheckedUpdateWithoutLinksInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  background?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  font?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  textColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  descriptionColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  iconColor?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
+
+/**
+ * Count Type ProfileCountOutputType
+ */
+
+export type ProfileCountOutputType = {
+  links: number
+}
+
+export type ProfileCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  links?: boolean | ProfileCountOutputTypeCountLinksArgs
+}
+
+/**
+ * ProfileCountOutputType without action
+ */
+export type ProfileCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ProfileCountOutputType
+   */
+  select?: Prisma.ProfileCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * ProfileCountOutputType without action
+ */
+export type ProfileCountOutputTypeCountLinksArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ProfileLinkWhereInput
+}
 
 
 export type ProfileSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -514,9 +697,13 @@ export type ProfileSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   background?: boolean
   font?: boolean
   textColor?: boolean
+  descriptionColor?: boolean
+  iconColor?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  links?: boolean | Prisma.Profile$linksArgs<ExtArgs>
+  _count?: boolean | Prisma.ProfileCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["profile"]>
 
 export type ProfileSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -527,6 +714,8 @@ export type ProfileSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   background?: boolean
   font?: boolean
   textColor?: boolean
+  descriptionColor?: boolean
+  iconColor?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -540,6 +729,8 @@ export type ProfileSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   background?: boolean
   font?: boolean
   textColor?: boolean
+  descriptionColor?: boolean
+  iconColor?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -553,13 +744,17 @@ export type ProfileSelectScalar = {
   background?: boolean
   font?: boolean
   textColor?: boolean
+  descriptionColor?: boolean
+  iconColor?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type ProfileOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "description" | "avatar" | "background" | "font" | "textColor" | "createdAt" | "updatedAt", ExtArgs["result"]["profile"]>
+export type ProfileOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "description" | "avatar" | "background" | "font" | "textColor" | "descriptionColor" | "iconColor" | "createdAt" | "updatedAt", ExtArgs["result"]["profile"]>
 export type ProfileInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  links?: boolean | Prisma.Profile$linksArgs<ExtArgs>
+  _count?: boolean | Prisma.ProfileCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type ProfileIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -572,6 +767,7 @@ export type $ProfilePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
   name: "Profile"
   objects: {
     user: Prisma.$UserPayload<ExtArgs>
+    links: Prisma.$ProfileLinkPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -581,6 +777,8 @@ export type $ProfilePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     background: string | null
     font: string | null
     textColor: string | null
+    descriptionColor: string | null
+    iconColor: string | null
     createdAt: Date
     updatedAt: Date
   }, ExtArgs["result"]["profile"]>
@@ -978,6 +1176,7 @@ readonly fields: ProfileFieldRefs;
 export interface Prisma__ProfileClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  links<T extends Prisma.Profile$linksArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Profile$linksArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProfileLinkPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1014,6 +1213,8 @@ export interface ProfileFieldRefs {
   readonly background: Prisma.FieldRef<"Profile", 'String'>
   readonly font: Prisma.FieldRef<"Profile", 'String'>
   readonly textColor: Prisma.FieldRef<"Profile", 'String'>
+  readonly descriptionColor: Prisma.FieldRef<"Profile", 'String'>
+  readonly iconColor: Prisma.FieldRef<"Profile", 'String'>
   readonly createdAt: Prisma.FieldRef<"Profile", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Profile", 'DateTime'>
 }
@@ -1414,6 +1615,30 @@ export type ProfileDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Inter
    * Limit how many Profiles to delete.
    */
   limit?: number
+}
+
+/**
+ * Profile.links
+ */
+export type Profile$linksArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ProfileLink
+   */
+  select?: Prisma.ProfileLinkSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ProfileLink
+   */
+  omit?: Prisma.ProfileLinkOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProfileLinkInclude<ExtArgs> | null
+  where?: Prisma.ProfileLinkWhereInput
+  orderBy?: Prisma.ProfileLinkOrderByWithRelationInput | Prisma.ProfileLinkOrderByWithRelationInput[]
+  cursor?: Prisma.ProfileLinkWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ProfileLinkScalarFieldEnum | Prisma.ProfileLinkScalarFieldEnum[]
 }
 
 /**
