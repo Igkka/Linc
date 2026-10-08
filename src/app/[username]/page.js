@@ -115,18 +115,31 @@ export default async function UserPage({ params }) {
     const profile = user.profile;
 
     return (
-        <main
-            className="user-page"
+<main
+    className="user-page"
+    style={{
+        color: profile?.textColor || "#ffffff",
+        fontFamily: profile?.font || "Manrope"
+    }}
+>
+    {profile?.backgroundType === "video" ? (
+        <video
+            className="user-background-video"
+            src={profile.background}
+            autoPlay
+            loop
+            muted
+            playsInline
+        />
+    ) : profile?.background ? (
+        <div
+            className="user-background-image"
             style={{
-                backgroundImage: profile?.background
-                    ? `url(${profile.background})`
-                    : "none",
-
-                color: profile?.textColor || "#ffffff",
-
-                fontFamily: profile?.font || "Manrope"
+                backgroundImage: `url(${profile.background})`
             }}
-        >
+        />
+    ) : null}
+
 
             <div className="user-profile">
 

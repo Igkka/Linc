@@ -52,7 +52,8 @@ export async function PUT(request) {
             font,
             textColor,
             descriptionColor,
-            iconColor
+            iconColor,
+            backgroundType
         } = body;
 
         const profile = await prisma.profile.upsert({
@@ -67,7 +68,8 @@ export async function PUT(request) {
                 font,
                 textColor,
                 descriptionColor,
-                iconColor
+                iconColor,
+                backgroundType
             },
 
             create: {
@@ -78,7 +80,8 @@ export async function PUT(request) {
                 font,
                 textColor,
                 descriptionColor,
-                iconColor
+                iconColor,
+                backgroundType
             }
         });
 

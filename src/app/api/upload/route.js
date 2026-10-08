@@ -34,22 +34,28 @@ export async function POST(request) {
         const allowedTypes = [
             "image/jpeg",
             "image/png",
-            "image/webp"
+            "image/webp",
+            "video/mp4",
+            "video/webm"
         ];
 
         if (!allowedTypes.includes(file.type)) {
             return NextResponse.json(
                 {
-                    error: "Only JPG, PNG and WebP images are allowed"
+                    error: "Only JPG, PNG, WebP, MP4 and WebM files are allowed"
                 },
                 { status: 400 }
             );
         }
 
+        const isVideo = file.type.startsWith("video/");
+
         const maxSize =
             type === "avatar"
                 ? 5 * 1024 * 1024
-                : 10 * 1024 * 1024;
+                : isVideo
+                    ? 30 * 1024 * 1024
+                    : 10 * 1024 * 1024;
 
         if (file.size > maxSize) {
             return NextResponse.json(
@@ -57,7 +63,9 @@ export async function POST(request) {
                     error:
                         type === "avatar"
                             ? "Avatar must be smaller than 5MB"
-                            : "Background must be smaller than 10MB"
+                            : isVideo
+                                ? "Background video must be smaller than 30MB"
+                                : "Background image must be smaller than 10MB"
                 },
                 { status: 400 }
             );
@@ -75,7 +83,7 @@ export async function POST(request) {
             cloudinary.uploader.upload_stream(
                 {
                     folder,
-                    resource_type: "image"
+                    resource_type: isVideo ? "video" : "image"
                 },
                 (error, result) => {
                     if (error) {
@@ -91,7 +99,6 @@ export async function POST(request) {
             url: result.secure_url,
             publicId: result.public_id
         });
-
     } catch (error) {
         console.error("UPLOAD_ERROR:", error);
 

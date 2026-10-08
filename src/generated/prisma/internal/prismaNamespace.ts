@@ -690,6 +690,7 @@ export const ProfileScalarFieldEnum = {
   textColor: 'textColor',
   descriptionColor: 'descriptionColor',
   iconColor: 'iconColor',
+  backgroundType: 'backgroundType',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
