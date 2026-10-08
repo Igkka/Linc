@@ -15,7 +15,7 @@ export const metadata = {
   metadataBase: new URL("https://linxy.fun"),
 
   title: {
-    default: "Linxy — Create Your Personal Profile",
+    default: "Linxy - Create Your Personal Profile",
     template: "%s | Linxy",
   },
 
@@ -63,7 +63,7 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Linxy — Create Your Personal Profile",
+    title: "Linxy - Create Your Personal Profile",
     description:
       "Create and customize your own personal profile page with Linxy.",
   },
