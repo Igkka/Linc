@@ -37,6 +37,10 @@ export type ProfileMinAggregateOutputType = {
   backgroundType: string | null
   createdAt: Date | null
   updatedAt: Date | null
+  musicUrl: string | null
+  musicTitle: string | null
+  musicArtist: string | null
+  musicCover: string | null
 }
 
 export type ProfileMaxAggregateOutputType = {
@@ -52,6 +56,10 @@ export type ProfileMaxAggregateOutputType = {
   backgroundType: string | null
   createdAt: Date | null
   updatedAt: Date | null
+  musicUrl: string | null
+  musicTitle: string | null
+  musicArtist: string | null
+  musicCover: string | null
 }
 
 export type ProfileCountAggregateOutputType = {
@@ -67,6 +75,10 @@ export type ProfileCountAggregateOutputType = {
   backgroundType: number
   createdAt: number
   updatedAt: number
+  musicUrl: number
+  musicTitle: number
+  musicArtist: number
+  musicCover: number
   _all: number
 }
 
@@ -84,6 +96,10 @@ export type ProfileMinAggregateInputType = {
   backgroundType?: true
   createdAt?: true
   updatedAt?: true
+  musicUrl?: true
+  musicTitle?: true
+  musicArtist?: true
+  musicCover?: true
 }
 
 export type ProfileMaxAggregateInputType = {
@@ -99,6 +115,10 @@ export type ProfileMaxAggregateInputType = {
   backgroundType?: true
   createdAt?: true
   updatedAt?: true
+  musicUrl?: true
+  musicTitle?: true
+  musicArtist?: true
+  musicCover?: true
 }
 
 export type ProfileCountAggregateInputType = {
@@ -114,6 +134,10 @@ export type ProfileCountAggregateInputType = {
   backgroundType?: true
   createdAt?: true
   updatedAt?: true
+  musicUrl?: true
+  musicTitle?: true
+  musicArtist?: true
+  musicCover?: true
   _all?: true
 }
 
@@ -202,6 +226,10 @@ export type ProfileGroupByOutputType = {
   backgroundType: string | null
   createdAt: Date
   updatedAt: Date
+  musicUrl: string | null
+  musicTitle: string | null
+  musicArtist: string | null
+  musicCover: string | null
   _count: ProfileCountAggregateOutputType | null
   _min: ProfileMinAggregateOutputType | null
   _max: ProfileMaxAggregateOutputType | null
@@ -238,6 +266,10 @@ export type ProfileWhereInput = {
   backgroundType?: Prisma.StringNullableFilter<"Profile"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Profile"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Profile"> | Date | string
+  musicUrl?: Prisma.StringNullableFilter<"Profile"> | string | null
+  musicTitle?: Prisma.StringNullableFilter<"Profile"> | string | null
+  musicArtist?: Prisma.StringNullableFilter<"Profile"> | string | null
+  musicCover?: Prisma.StringNullableFilter<"Profile"> | string | null
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   links?: Prisma.ProfileLinkListRelationFilter
 }
@@ -255,6 +287,10 @@ export type ProfileOrderByWithRelationInput = {
   backgroundType?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  musicUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  musicTitle?: Prisma.SortOrderInput | Prisma.SortOrder
+  musicArtist?: Prisma.SortOrderInput | Prisma.SortOrder
+  musicCover?: Prisma.SortOrderInput | Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
   links?: Prisma.ProfileLinkOrderByRelationAggregateInput
 }
@@ -275,6 +311,10 @@ export type ProfileWhereUniqueInput = Prisma.AtLeast<{
   backgroundType?: Prisma.StringNullableFilter<"Profile"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Profile"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Profile"> | Date | string
+  musicUrl?: Prisma.StringNullableFilter<"Profile"> | string | null
+  musicTitle?: Prisma.StringNullableFilter<"Profile"> | string | null
+  musicArtist?: Prisma.StringNullableFilter<"Profile"> | string | null
+  musicCover?: Prisma.StringNullableFilter<"Profile"> | string | null
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   links?: Prisma.ProfileLinkListRelationFilter
 }, "id" | "userId">
@@ -292,6 +332,10 @@ export type ProfileOrderByWithAggregationInput = {
   backgroundType?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  musicUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  musicTitle?: Prisma.SortOrderInput | Prisma.SortOrder
+  musicArtist?: Prisma.SortOrderInput | Prisma.SortOrder
+  musicCover?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.ProfileCountOrderByAggregateInput
   _max?: Prisma.ProfileMaxOrderByAggregateInput
   _min?: Prisma.ProfileMinOrderByAggregateInput
@@ -313,6 +357,10 @@ export type ProfileScalarWhereWithAggregatesInput = {
   backgroundType?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Profile"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Profile"> | Date | string
+  musicUrl?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
+  musicTitle?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
+  musicArtist?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
+  musicCover?: Prisma.StringNullableWithAggregatesFilter<"Profile"> | string | null
 }
 
 export type ProfileCreateInput = {
@@ -327,6 +375,10 @@ export type ProfileCreateInput = {
   backgroundType?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  musicUrl?: string | null
+  musicTitle?: string | null
+  musicArtist?: string | null
+  musicCover?: string | null
   user: Prisma.UserCreateNestedOneWithoutProfileInput
   links?: Prisma.ProfileLinkCreateNestedManyWithoutProfileInput
 }
@@ -344,6 +396,10 @@ export type ProfileUncheckedCreateInput = {
   backgroundType?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  musicUrl?: string | null
+  musicTitle?: string | null
+  musicArtist?: string | null
+  musicCover?: string | null
   links?: Prisma.ProfileLinkUncheckedCreateNestedManyWithoutProfileInput
 }
 
@@ -359,6 +415,10 @@ export type ProfileUpdateInput = {
   backgroundType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  musicUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicArtist?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicCover?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user?: Prisma.UserUpdateOneRequiredWithoutProfileNestedInput
   links?: Prisma.ProfileLinkUpdateManyWithoutProfileNestedInput
 }
@@ -376,6 +436,10 @@ export type ProfileUncheckedUpdateInput = {
   backgroundType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  musicUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicArtist?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicCover?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   links?: Prisma.ProfileLinkUncheckedUpdateManyWithoutProfileNestedInput
 }
 
@@ -392,6 +456,10 @@ export type ProfileCreateManyInput = {
   backgroundType?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  musicUrl?: string | null
+  musicTitle?: string | null
+  musicArtist?: string | null
+  musicCover?: string | null
 }
 
 export type ProfileUpdateManyMutationInput = {
@@ -406,6 +474,10 @@ export type ProfileUpdateManyMutationInput = {
   backgroundType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  musicUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicArtist?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicCover?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type ProfileUncheckedUpdateManyInput = {
@@ -421,6 +493,10 @@ export type ProfileUncheckedUpdateManyInput = {
   backgroundType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  musicUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicArtist?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicCover?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type ProfileCountOrderByAggregateInput = {
@@ -436,6 +512,10 @@ export type ProfileCountOrderByAggregateInput = {
   backgroundType?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  musicUrl?: Prisma.SortOrder
+  musicTitle?: Prisma.SortOrder
+  musicArtist?: Prisma.SortOrder
+  musicCover?: Prisma.SortOrder
 }
 
 export type ProfileMaxOrderByAggregateInput = {
@@ -451,6 +531,10 @@ export type ProfileMaxOrderByAggregateInput = {
   backgroundType?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  musicUrl?: Prisma.SortOrder
+  musicTitle?: Prisma.SortOrder
+  musicArtist?: Prisma.SortOrder
+  musicCover?: Prisma.SortOrder
 }
 
 export type ProfileMinOrderByAggregateInput = {
@@ -466,6 +550,10 @@ export type ProfileMinOrderByAggregateInput = {
   backgroundType?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  musicUrl?: Prisma.SortOrder
+  musicTitle?: Prisma.SortOrder
+  musicArtist?: Prisma.SortOrder
+  musicCover?: Prisma.SortOrder
 }
 
 export type ProfileNullableScalarRelationFilter = {
@@ -548,6 +636,10 @@ export type ProfileCreateWithoutUserInput = {
   backgroundType?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  musicUrl?: string | null
+  musicTitle?: string | null
+  musicArtist?: string | null
+  musicCover?: string | null
   links?: Prisma.ProfileLinkCreateNestedManyWithoutProfileInput
 }
 
@@ -563,6 +655,10 @@ export type ProfileUncheckedCreateWithoutUserInput = {
   backgroundType?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  musicUrl?: string | null
+  musicTitle?: string | null
+  musicArtist?: string | null
+  musicCover?: string | null
   links?: Prisma.ProfileLinkUncheckedCreateNestedManyWithoutProfileInput
 }
 
@@ -594,6 +690,10 @@ export type ProfileUpdateWithoutUserInput = {
   backgroundType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  musicUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicArtist?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicCover?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   links?: Prisma.ProfileLinkUpdateManyWithoutProfileNestedInput
 }
 
@@ -609,6 +709,10 @@ export type ProfileUncheckedUpdateWithoutUserInput = {
   backgroundType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  musicUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicArtist?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicCover?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   links?: Prisma.ProfileLinkUncheckedUpdateManyWithoutProfileNestedInput
 }
 
@@ -624,6 +728,10 @@ export type ProfileCreateWithoutLinksInput = {
   backgroundType?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  musicUrl?: string | null
+  musicTitle?: string | null
+  musicArtist?: string | null
+  musicCover?: string | null
   user: Prisma.UserCreateNestedOneWithoutProfileInput
 }
 
@@ -640,6 +748,10 @@ export type ProfileUncheckedCreateWithoutLinksInput = {
   backgroundType?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  musicUrl?: string | null
+  musicTitle?: string | null
+  musicArtist?: string | null
+  musicCover?: string | null
 }
 
 export type ProfileCreateOrConnectWithoutLinksInput = {
@@ -670,6 +782,10 @@ export type ProfileUpdateWithoutLinksInput = {
   backgroundType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  musicUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicArtist?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicCover?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user?: Prisma.UserUpdateOneRequiredWithoutProfileNestedInput
 }
 
@@ -686,6 +802,10 @@ export type ProfileUncheckedUpdateWithoutLinksInput = {
   backgroundType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  musicUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicArtist?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  musicCover?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -732,6 +852,10 @@ export type ProfileSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   backgroundType?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  musicUrl?: boolean
+  musicTitle?: boolean
+  musicArtist?: boolean
+  musicCover?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   links?: boolean | Prisma.Profile$linksArgs<ExtArgs>
   _count?: boolean | Prisma.ProfileCountOutputTypeDefaultArgs<ExtArgs>
@@ -750,6 +874,10 @@ export type ProfileSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   backgroundType?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  musicUrl?: boolean
+  musicTitle?: boolean
+  musicArtist?: boolean
+  musicCover?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["profile"]>
 
@@ -766,6 +894,10 @@ export type ProfileSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   backgroundType?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  musicUrl?: boolean
+  musicTitle?: boolean
+  musicArtist?: boolean
+  musicCover?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["profile"]>
 
@@ -782,9 +914,13 @@ export type ProfileSelectScalar = {
   backgroundType?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  musicUrl?: boolean
+  musicTitle?: boolean
+  musicArtist?: boolean
+  musicCover?: boolean
 }
 
-export type ProfileOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "description" | "avatar" | "background" | "font" | "textColor" | "descriptionColor" | "iconColor" | "backgroundType" | "createdAt" | "updatedAt", ExtArgs["result"]["profile"]>
+export type ProfileOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "description" | "avatar" | "background" | "font" | "textColor" | "descriptionColor" | "iconColor" | "backgroundType" | "createdAt" | "updatedAt" | "musicUrl" | "musicTitle" | "musicArtist" | "musicCover", ExtArgs["result"]["profile"]>
 export type ProfileInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   links?: boolean | Prisma.Profile$linksArgs<ExtArgs>
@@ -816,6 +952,10 @@ export type $ProfilePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     backgroundType: string | null
     createdAt: Date
     updatedAt: Date
+    musicUrl: string | null
+    musicTitle: string | null
+    musicArtist: string | null
+    musicCover: string | null
   }, ExtArgs["result"]["profile"]>
   composites: {}
 }
@@ -1253,6 +1393,10 @@ export interface ProfileFieldRefs {
   readonly backgroundType: Prisma.FieldRef<"Profile", 'String'>
   readonly createdAt: Prisma.FieldRef<"Profile", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Profile", 'DateTime'>
+  readonly musicUrl: Prisma.FieldRef<"Profile", 'String'>
+  readonly musicTitle: Prisma.FieldRef<"Profile", 'String'>
+  readonly musicArtist: Prisma.FieldRef<"Profile", 'String'>
+  readonly musicCover: Prisma.FieldRef<"Profile", 'String'>
 }
     
 

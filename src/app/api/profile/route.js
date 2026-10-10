@@ -53,7 +53,11 @@ export async function PUT(request) {
             textColor,
             descriptionColor,
             iconColor,
-            backgroundType
+            backgroundType,
+            musicUrl,
+            musicTitle,
+            musicArtist,
+            musicCover
         } = body;
 
         const profile = await prisma.profile.upsert({
@@ -69,7 +73,11 @@ export async function PUT(request) {
                 textColor,
                 descriptionColor,
                 iconColor,
-                backgroundType
+                backgroundType,
+                musicUrl,
+                musicTitle,
+                musicArtist,
+                musicCover
             },
 
             create: {
@@ -81,7 +89,11 @@ export async function PUT(request) {
                 textColor,
                 descriptionColor,
                 iconColor,
-                backgroundType
+                backgroundType,
+                musicUrl,
+                musicTitle,
+                musicArtist,
+                musicCover
             }
         });
 

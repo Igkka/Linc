@@ -84,7 +84,11 @@ export const ProfileScalarFieldEnum = {
   iconColor: 'iconColor',
   backgroundType: 'backgroundType',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  musicUrl: 'musicUrl',
+  musicTitle: 'musicTitle',
+  musicArtist: 'musicArtist',
+  musicCover: 'musicCover'
 } as const
 
 export type ProfileScalarFieldEnum = (typeof ProfileScalarFieldEnum)[keyof typeof ProfileScalarFieldEnum]

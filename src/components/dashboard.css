@@ -879,3 +879,63 @@
     color: #aaa;
     text-transform: uppercase;
 }
+
+.music-cover-upload {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+    border-radius: 14px;
+}
+
+.music-cover-upload img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.field-hint {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    .music-cover-upload {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+
+/* Music file input */
+
+.dashboard-section input[type="file"] {
+    width: 100%;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.dashboard-section input[type="file"]::file-selector-button {
+    margin-right: 14px;
+    padding: 11px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.9);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.dashboard-section input[type="file"]::file-selector-button:hover {
+    background: rgb(255, 254, 254);
+    color: #000000;
+}

@@ -172,6 +172,10 @@
             descriptionColor: "#ffffff",
             iconColor: "#ffffff",
             backgroundType: "image",
+            musicUrl:"",
+            musicTitle:"",
+            musicArtist:"",
+            musicCover:""
         });
 
         const [loading, setLoading] = useState(true);
@@ -210,10 +214,12 @@
                             backgroundType: data.profile.backgroundType || "image",
                             font: data.profile.font || "Manrope",
                             textColor: data.profile.textColor || "#ffffff",
-                            descriptionColor:
-                                data.profile.descriptionColor || "#ffffff",
-                            iconColor:
-                                data.profile.iconColor || "#ffffff"
+                            descriptionColor:data.profile.descriptionColor || "#ffffff",
+                            iconColor:data.profile.iconColor || "#ffffff",
+                            musicUrl: data.profile.musicUrl || "",
+                            musicTitle: data.profile.musicTitle || "",
+                            musicArtist: data.profile.musicArtist || "",
+                            musicCover: data.profile.musicCover || ""
                         });
                     }
                 } catch (error) {
@@ -278,22 +284,39 @@
                 });
 
                 const data = await response.json();
+                console.log("UPLOAD RESPONSE:", data);
 
                 if (!response.ok) {
                     throw new Error(data.error || "Upload failed");
                 }
                 const isVideo = file.type.startsWith("video/");
 
-                setProfile((prev) => ({
-                    ...prev,
-                    [type]: data.url,
+                   
+                setProfile((prev) => {
+                    const updated = {
+                        ...prev,
+                        ...(type === "music"
+                            ? {
+                                musicUrl: data.url,
+                                musicCover: data.coverUrl || ""
+                            }
+                            : {
+                                [type]: data.url
+                            }),
+                        ...(type === "background"
+                            ? {
+                                backgroundType: isVideo ? "video" : "image"
+                            }
+                            : {})
+                    };
 
-                    ...(type === "background"
-                        ? {
-                            backgroundType: isVideo ? "video" : "image"
-                        }
-                        : {})
-                }));
+                    console.log("PROFILE AFTER UPLOAD:", {
+                        musicUrl: updated.musicUrl,
+                        musicCover: updated.musicCover
+                    });
+
+                    return updated;
+                });
 
                 setMessage(
                     type === "avatar"
@@ -320,6 +343,8 @@
             });
 
             const data = await response.json();
+            console.log("SENDING MUSIC COVER:", profile.musicCover);
+            console.log("SAVED MUSIC COVER:", data.profile?.musicCover);
 
             console.log("PROFILE SAVE RESPONSE:", data);
 
@@ -972,21 +997,108 @@
                         </div>
                     )}
 
-                    {activeTab === "music" && (
-                        <div className="empty-section">
-                            <span className="eyebrow">Music</span>
+  {activeTab === "music" && (
+    <div className="dashboard-section">
+        <div className="section-heading">
+            <div>
+                <span className="eyebrow">
+                    Music
+                </span>
 
-                            <h1>Your music</h1>
+                <h1>Music Player</h1>
 
-                            <p>
-                                Add music to your Linxy profile.
-                            </p>
+                <p>
+                    Customize the music on your profile.
+                </p>
+            </div>
+        </div>
 
-                            <span className="coming-soon">
-                                Coming soon
-                            </span>
-                        </div>
+        {loading ? (
+            <p className="loading">
+                Loading profile...
+            </p>
+        ) : (
+            <div className="editor">
+                <div className="form-group">
+                    <label>Audio file</label>
+
+                    <input
+                        type="file"
+                        accept="audio/*"
+                        onChange={(e) => {
+                            const file = e.target.files?.[0];
+
+                            if (file) {
+                                uploadImage(file, "music");
+                            }
+
+                            e.target.value = "";
+                        }}
+                    />
+
+                    {profile.musicUrl && (
+                        <span className="field-hint">
+                            Audio file uploaded successfully.
+                        </span>
                     )}
+                </div>
+
+
+                <div className="form-group">
+                    <label htmlFor="music-title">
+                        Track title
+                    </label>
+
+                    <input
+                        id="music-title"
+                        type="text"
+                        maxLength={30}
+                        value={profile.musicTitle}
+                        onChange={(e) =>
+                            updateProfile(
+                                "musicTitle",
+                                e.target.value
+                            )
+                        }
+                        placeholder="Enter track title"
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="music-artist">
+                        Artist
+                    </label>
+
+                    <input
+                        id="music-artist"
+                        type="text"
+                        maxLength={30}
+                        value={profile.musicArtist}
+                        onChange={(e) =>
+                            updateProfile(
+                                "musicArtist",
+                                e.target.value
+                            )
+                        }
+                        placeholder="Enter artist name"
+                    />
+                </div>
+
+                <div className="editor-footer">
+                    <span>{message}</span>
+
+                    <button
+                        type="button"
+                        onClick={saveProfile}
+                        disabled={saving}
+                    >
+                        {saving ? "Saving..." : "Save changes"}
+                    </button>
+                </div>
+            </div>
+        )}
+    </div>
+)}
 
                     {activeTab === "settings" && (
                         <div className="empty-section">
