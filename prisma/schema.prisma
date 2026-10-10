@@ -32,7 +32,7 @@ model Profile {
     musicTitle  String?
     musicArtist String?
     musicCover  String?
-
+    views Int @default(0)
     links ProfileLink[]
 }
 model User {

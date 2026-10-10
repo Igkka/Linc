@@ -3,6 +3,8 @@ import { prisma } from "../../../lib/prisma";
 import { notFound } from "next/navigation";
 import "./user.css";
 import MusicPlayer from "./MusicPlayer";
+import ProfileEntry from "./ProfileEntry";
+import ProfileViews from "./ProfileViews";
 
 import {
     siGithub,
@@ -112,6 +114,7 @@ export default async function UserPage({ params }) {
     const profile = user.profile;
 
     return (
+        <ProfileEntry username={user.username}>
         <main
             className="user-page"
             style={{
@@ -201,8 +204,10 @@ export default async function UserPage({ params }) {
                             ))}
                         </div>
                     )}
+                    <ProfileViews initialViews={profile?.views ?? 0} />
                 </div>
             </div>
         </main>
+        </ProfileEntry>
     );
 }
